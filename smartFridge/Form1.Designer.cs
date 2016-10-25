@@ -62,6 +62,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.deleteUnitLabel = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.panelInside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContent)).BeginInit();
             this.panelCookBook.SuspendLayout();
@@ -133,6 +134,7 @@
             // 
             // panelCookBook
             // 
+            this.panelCookBook.Controls.Add(this.label15);
             this.panelCookBook.Controls.Add(this.deleteUnitLabel);
             this.panelCookBook.Controls.Add(this.label14);
             this.panelCookBook.Controls.Add(this.btnDeleteProduct);
@@ -396,6 +398,15 @@
             this.deleteUnitLabel.TabIndex = 24;
             this.deleteUnitLabel.Text = "[]";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(196, 247);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(41, 13);
+            this.label15.TabIndex = 25;
+            this.label15.Text = "label15";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,6 +472,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label deleteUnitLabel;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
     }
 }
 
