@@ -16,17 +16,16 @@ namespace smartFridge
         bool decision;
         smartFridgeDBEntities context = new smartFridgeDBEntities();
         ProductInFridge deletedProduct = new ProductInFridge();
+        int oldAmount;
       //  List<Product> productList = new List<Product>();
 
         public Form1()
         {
             InitializeComponent();
-            panelInside.Visible = false;
             panelCookBook.Visible = false;
             panelAdd.Visible = false;
             panelWelcome.Visible = true;
         }
-
         private void btnContent_Click(object sender, EventArgs e)
         {
             panelInside.Visible = true;
@@ -38,14 +37,12 @@ namespace smartFridge
         {
             panelAdd.Visible = true;
             panelWelcome.Visible = false;
-            panelInside.Visible = false;
             panelCookBook.Visible = false;
         }
         private void btnCookbook_Click(object sender, EventArgs e)
         {
             panelCookBook.Visible = true;
             panelWelcome.Visible = false;
-            panelInside.Visible = false;
             panelAdd.Visible = false;
         }
         private void codeTxtBox_TextChanged(object sender, EventArgs e)
@@ -197,14 +194,14 @@ namespace smartFridge
         {
             deleteProdCodeTxtBox.Text = prod.BarcodeNumber;
             deleteNameTxtBox.Text = prod.Product.Name;
-            deleteAmountTxtBox.Text = prod.Amount;
+            deleteAmountNumericUpDown.Text = prod.Amount;
             deleteUnitLabel.Text = prod.Unit;
         }
         void cleanDeleteBoxes()
         {
             deleteProdCodeTxtBox.Clear();
             deleteNameTxtBox.Clear();
-            deleteAmountTxtBox.Clear();
+            deleteAmountNumericUpDown.ResetText();
             deleteUnitLabel.Text = "[]";
         }
 
@@ -234,6 +231,7 @@ namespace smartFridge
                 {
                     deletedProduct = delProduct;
                     setBoxes(delProduct);
+                    oldAmount = getAmountValue(deleteAmountNumericUpDown.Value.ToString());
                 }
                 else
                 {
@@ -242,6 +240,38 @@ namespace smartFridge
             }
             
         }
+
+        private int getAmountValue(string amount)
+        {
+            int value = int.Parse(amount);
+            return value;
+        }
+
+        private void deleteAmountBtn_Click(object sender, EventArgs e)
+        {
+            int newAmount = getAmountValue(deleteAmountNumericUpDown.Value.ToString());
+            if (newAmount > oldAmount)
+            {
+                MessageBox.Show("Nowa ilość musi być mniejsza.");
+                deleteAmountNumericUpDown.BackColor = Color.Red;
+            }
+            else if (newAmount == oldAmount)
+            {
+                MessageBox.Show("Zmień ilość.");
+                deleteAmountNumericUpDown.BackColor = Color.Red;
+            }
+            else
+            {
+                var updatedProduct = findProductInFridge(deleteProdCodeTxtBox.Text);
+                updatedProduct.Amount = newAmount.ToString();
+                context.SaveChanges();
+                deleteAmountNumericUpDown.BackColor = Color.Empty;
+                MessageBox.Show("Ilość została zmieniona.");
+            }
+        }
+        
+
+
 
 
 

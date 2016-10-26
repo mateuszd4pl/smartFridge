@@ -35,8 +35,9 @@
             this.btnAddMenu = new System.Windows.Forms.Button();
             this.btnCookbookMenu = new System.Windows.Forms.Button();
             this.panelCookBook = new System.Windows.Forms.Panel();
+            this.deleteUnitLabel = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
-            this.deleteAmountTxtBox = new System.Windows.Forms.TextBox();
             this.deleteNameTxtBox = new System.Windows.Forms.TextBox();
             this.deleteProdCodeTxtBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -60,15 +61,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelWelcome = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.deleteUnitLabel = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.deleteAmountBtn = new System.Windows.Forms.Button();
+            this.deleteAmountNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.panelInside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContent)).BeginInit();
             this.panelCookBook.SuspendLayout();
             this.panelAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.amountNumericUpDown)).BeginInit();
             this.panelWelcome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteAmountNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // panelInside
@@ -128,17 +129,17 @@
             this.btnCookbookMenu.Name = "btnCookbookMenu";
             this.btnCookbookMenu.Size = new System.Drawing.Size(91, 23);
             this.btnCookbookMenu.TabIndex = 3;
-            this.btnCookbookMenu.Text = "Przepisy";
+            this.btnCookbookMenu.Text = "Usuń produkt";
             this.btnCookbookMenu.UseVisualStyleBackColor = true;
             this.btnCookbookMenu.Click += new System.EventHandler(this.btnCookbook_Click);
             // 
             // panelCookBook
             // 
-            this.panelCookBook.Controls.Add(this.label15);
+            this.panelCookBook.Controls.Add(this.deleteAmountNumericUpDown);
+            this.panelCookBook.Controls.Add(this.deleteAmountBtn);
             this.panelCookBook.Controls.Add(this.deleteUnitLabel);
             this.panelCookBook.Controls.Add(this.label14);
             this.panelCookBook.Controls.Add(this.btnDeleteProduct);
-            this.panelCookBook.Controls.Add(this.deleteAmountTxtBox);
             this.panelCookBook.Controls.Add(this.deleteNameTxtBox);
             this.panelCookBook.Controls.Add(this.deleteProdCodeTxtBox);
             this.panelCookBook.Controls.Add(this.label12);
@@ -150,22 +151,33 @@
             this.panelCookBook.Size = new System.Drawing.Size(299, 285);
             this.panelCookBook.TabIndex = 4;
             // 
+            // deleteUnitLabel
+            // 
+            this.deleteUnitLabel.AutoSize = true;
+            this.deleteUnitLabel.Location = new System.Drawing.Point(107, 198);
+            this.deleteUnitLabel.Name = "deleteUnitLabel";
+            this.deleteUnitLabel.Size = new System.Drawing.Size(13, 13);
+            this.deleteUnitLabel.TabIndex = 24;
+            this.deleteUnitLabel.Text = "[]";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(22, 196);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(59, 13);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "Jednostka:";
+            // 
             // btnDeleteProduct
             // 
-            this.btnDeleteProduct.Location = new System.Drawing.Point(66, 188);
+            this.btnDeleteProduct.Location = new System.Drawing.Point(110, 121);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
-            this.btnDeleteProduct.Size = new System.Drawing.Size(157, 23);
+            this.btnDeleteProduct.Size = new System.Drawing.Size(144, 23);
             this.btnDeleteProduct.TabIndex = 19;
-            this.btnDeleteProduct.Text = "Usuń";
+            this.btnDeleteProduct.Text = "Usuń cały produkt";
             this.btnDeleteProduct.UseVisualStyleBackColor = true;
             this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
-            // 
-            // deleteAmountTxtBox
-            // 
-            this.deleteAmountTxtBox.Location = new System.Drawing.Point(110, 114);
-            this.deleteAmountTxtBox.Name = "deleteAmountTxtBox";
-            this.deleteAmountTxtBox.Size = new System.Drawing.Size(144, 20);
-            this.deleteAmountTxtBox.TabIndex = 23;
             // 
             // deleteNameTxtBox
             // 
@@ -185,7 +197,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(22, 114);
+            this.label12.Location = new System.Drawing.Point(22, 173);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(32, 13);
             this.label12.TabIndex = 20;
@@ -380,32 +392,22 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "WELCOME";
             // 
-            // label14
+            // deleteAmountBtn
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(22, 145);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 13);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "Jednostka:";
+            this.deleteAmountBtn.Location = new System.Drawing.Point(110, 223);
+            this.deleteAmountBtn.Name = "deleteAmountBtn";
+            this.deleteAmountBtn.Size = new System.Drawing.Size(144, 23);
+            this.deleteAmountBtn.TabIndex = 25;
+            this.deleteAmountBtn.Text = "Zmień ilość";
+            this.deleteAmountBtn.UseVisualStyleBackColor = true;
+            this.deleteAmountBtn.Click += new System.EventHandler(this.deleteAmountBtn_Click);
             // 
-            // deleteUnitLabel
+            // deleteAmountNumericUpDown
             // 
-            this.deleteUnitLabel.AutoSize = true;
-            this.deleteUnitLabel.Location = new System.Drawing.Point(107, 145);
-            this.deleteUnitLabel.Name = "deleteUnitLabel";
-            this.deleteUnitLabel.Size = new System.Drawing.Size(13, 13);
-            this.deleteUnitLabel.TabIndex = 24;
-            this.deleteUnitLabel.Text = "[]";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(196, 247);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 13);
-            this.label15.TabIndex = 25;
-            this.label15.Text = "label15";
+            this.deleteAmountNumericUpDown.Location = new System.Drawing.Point(110, 169);
+            this.deleteAmountNumericUpDown.Name = "deleteAmountNumericUpDown";
+            this.deleteAmountNumericUpDown.Size = new System.Drawing.Size(144, 20);
+            this.deleteAmountNumericUpDown.TabIndex = 27;
             // 
             // Form1
             // 
@@ -432,6 +434,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.amountNumericUpDown)).EndInit();
             this.panelWelcome.ResumeLayout(false);
             this.panelWelcome.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteAmountNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -461,7 +464,6 @@
         private System.Windows.Forms.DataGridView dataGridViewContent;
         private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.Button btnDeleteProduct;
-        private System.Windows.Forms.TextBox deleteAmountTxtBox;
         private System.Windows.Forms.TextBox deleteNameTxtBox;
         private System.Windows.Forms.TextBox deleteProdCodeTxtBox;
         private System.Windows.Forms.Label label12;
@@ -472,7 +474,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label deleteUnitLabel;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button deleteAmountBtn;
+        private System.Windows.Forms.NumericUpDown deleteAmountNumericUpDown;
     }
 }
 
