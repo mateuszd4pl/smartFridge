@@ -175,7 +175,7 @@
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Size = new System.Drawing.Size(144, 23);
             this.btnDeleteProduct.TabIndex = 19;
-            this.btnDeleteProduct.Text = "Usuń cały produkt";
+            this.btnDeleteProduct.Text = "Usuń produkt";
             this.btnDeleteProduct.UseVisualStyleBackColor = true;
             this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
             // 
