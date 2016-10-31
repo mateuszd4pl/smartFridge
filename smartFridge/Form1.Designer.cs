@@ -35,6 +35,8 @@
             this.btnAddMenu = new System.Windows.Forms.Button();
             this.btnCookbookMenu = new System.Windows.Forms.Button();
             this.panelCookBook = new System.Windows.Forms.Panel();
+            this.deleteAmountNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.deleteAmountBtn = new System.Windows.Forms.Button();
             this.deleteUnitLabel = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
@@ -61,15 +63,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelWelcome = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.deleteAmountBtn = new System.Windows.Forms.Button();
-            this.deleteAmountNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.btnSendSMS = new System.Windows.Forms.Button();
+            this.smsTxtBox = new System.Windows.Forms.TextBox();
             this.panelInside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContent)).BeginInit();
             this.panelCookBook.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteAmountNumericUpDown)).BeginInit();
             this.panelAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.amountNumericUpDown)).BeginInit();
             this.panelWelcome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.deleteAmountNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // panelInside
@@ -150,6 +152,23 @@
             this.panelCookBook.Name = "panelCookBook";
             this.panelCookBook.Size = new System.Drawing.Size(299, 285);
             this.panelCookBook.TabIndex = 4;
+            // 
+            // deleteAmountNumericUpDown
+            // 
+            this.deleteAmountNumericUpDown.Location = new System.Drawing.Point(110, 169);
+            this.deleteAmountNumericUpDown.Name = "deleteAmountNumericUpDown";
+            this.deleteAmountNumericUpDown.Size = new System.Drawing.Size(144, 20);
+            this.deleteAmountNumericUpDown.TabIndex = 27;
+            // 
+            // deleteAmountBtn
+            // 
+            this.deleteAmountBtn.Location = new System.Drawing.Point(110, 223);
+            this.deleteAmountBtn.Name = "deleteAmountBtn";
+            this.deleteAmountBtn.Size = new System.Drawing.Size(144, 23);
+            this.deleteAmountBtn.TabIndex = 25;
+            this.deleteAmountBtn.Text = "Zmień ilość";
+            this.deleteAmountBtn.UseVisualStyleBackColor = true;
+            this.deleteAmountBtn.Click += new System.EventHandler(this.deleteAmountBtn_Click);
             // 
             // deleteUnitLabel
             // 
@@ -377,6 +396,8 @@
             // 
             // panelWelcome
             // 
+            this.panelWelcome.Controls.Add(this.smsTxtBox);
+            this.panelWelcome.Controls.Add(this.btnSendSMS);
             this.panelWelcome.Controls.Add(this.label4);
             this.panelWelcome.Location = new System.Drawing.Point(12, 336);
             this.panelWelcome.Name = "panelWelcome";
@@ -386,28 +407,29 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(408, 33);
+            this.label4.Location = new System.Drawing.Point(497, 49);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "WELCOME";
             // 
-            // deleteAmountBtn
+            // btnSendSMS
             // 
-            this.deleteAmountBtn.Location = new System.Drawing.Point(110, 223);
-            this.deleteAmountBtn.Name = "deleteAmountBtn";
-            this.deleteAmountBtn.Size = new System.Drawing.Size(144, 23);
-            this.deleteAmountBtn.TabIndex = 25;
-            this.deleteAmountBtn.Text = "Zmień ilość";
-            this.deleteAmountBtn.UseVisualStyleBackColor = true;
-            this.deleteAmountBtn.Click += new System.EventHandler(this.deleteAmountBtn_Click);
+            this.btnSendSMS.Location = new System.Drawing.Point(311, 44);
+            this.btnSendSMS.Name = "btnSendSMS";
+            this.btnSendSMS.Size = new System.Drawing.Size(75, 23);
+            this.btnSendSMS.TabIndex = 1;
+            this.btnSendSMS.Text = "Wyślij SMS";
+            this.btnSendSMS.UseVisualStyleBackColor = true;
+            this.btnSendSMS.Click += new System.EventHandler(this.btnSendSMS_Click);
             // 
-            // deleteAmountNumericUpDown
+            // smsTxtBox
             // 
-            this.deleteAmountNumericUpDown.Location = new System.Drawing.Point(110, 169);
-            this.deleteAmountNumericUpDown.Name = "deleteAmountNumericUpDown";
-            this.deleteAmountNumericUpDown.Size = new System.Drawing.Size(144, 20);
-            this.deleteAmountNumericUpDown.TabIndex = 27;
+            this.smsTxtBox.Location = new System.Drawing.Point(32, 18);
+            this.smsTxtBox.Multiline = true;
+            this.smsTxtBox.Name = "smsTxtBox";
+            this.smsTxtBox.Size = new System.Drawing.Size(253, 71);
+            this.smsTxtBox.TabIndex = 2;
             // 
             // Form1
             // 
@@ -429,12 +451,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContent)).EndInit();
             this.panelCookBook.ResumeLayout(false);
             this.panelCookBook.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteAmountNumericUpDown)).EndInit();
             this.panelAdd.ResumeLayout(false);
             this.panelAdd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.amountNumericUpDown)).EndInit();
             this.panelWelcome.ResumeLayout(false);
             this.panelWelcome.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.deleteAmountNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -476,6 +498,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button deleteAmountBtn;
         private System.Windows.Forms.NumericUpDown deleteAmountNumericUpDown;
+        private System.Windows.Forms.TextBox smsTxtBox;
+        private System.Windows.Forms.Button btnSendSMS;
     }
 }
 

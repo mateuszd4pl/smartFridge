@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Net;
+using Twilio;
 
 namespace smartFridge
 {
@@ -269,10 +271,27 @@ namespace smartFridge
                 MessageBox.Show("Ilość została zmieniona.");
             }
         }
+
+        private void sendSMS()
+        {
+            string text = smsTxtBox.Text;
+            string AccountSid = "ACd1ab8990c3a6bbfb9da8bcd0d2b705b8";
+            string AuthToken = "942162d650e60d97f65c0c0200126f62";
+            var twilio = new TwilioRestClient(AccountSid, AuthToken);
+            
+            var message = twilio.SendMessage(
+                "+48732483848", 
+                "+48600945873",
+                text
+            );
+            Console.WriteLine(message.Sid);
+        }
+
+        private void btnSendSMS_Click(object sender, EventArgs e)
+        {
+            sendSMS();
+        }
         
-
-
-
 
 
     }
